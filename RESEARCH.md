@@ -23,6 +23,8 @@ _BinkSetVolume@12
 _BinkWait@4
 ```
 
+The video size is hardcoded to 640x480, the framerate is handled by Bink.
+
 ### BinkVideoPlayback
 
 `BinkVideoPlayback` is the name of the class given to the part handling the Bink Video.
@@ -64,6 +66,14 @@ struct BinkVideoPlayback __packed
     __padding char _151[3];
     float field_154;
 };
+
+struct BinkHandle __packed
+{
+    uint32_t width;
+    uint32_t height;
+    uint32_t frames;
+};
+
 ```
 
 ### Open a Video (0x00564bbe)
