@@ -1,0 +1,13 @@
+LIBRARY BlinxWrap
+EXPORTS
+	BinkClose = _BinkClose@4
+	BinkCopyToBuffer = _BinkCopyToBuffer@28
+	BinkDDSurfaceType = _BinkDDSurfaceType@4
+	BinkDoFrame = _BinkDoFrame@4
+	BinkNextFrame = _BinkNextFrame@4
+	BinkOpen = _BinkOpen@8
+	BinkOpenMiles = _BinkOpenMiles@4
+	BinkSetFrameRate = _BinkSetFrameRate@8
+	BinkSetSoundSystem = _BinkSetSoundSystem@8
+	BinkSetVolume = _BinkSetVolume@12
+	BinkSetVolume = _BinkWait@4

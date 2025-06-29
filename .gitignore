@@ -1,0 +1,6 @@
+.vs/
+
+# Compilation
+*.obj
+Debug/
+Release/
