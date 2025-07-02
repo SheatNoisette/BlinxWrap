@@ -25,6 +25,12 @@
     <Filter Include="Header Files\avcodec">
       <UniqueIdentifier>{f138c56d-adc0-4bdc-91c3-22e45ffb9545}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\BlinxWrap">
+      <UniqueIdentifier>{204d24e2-4d15-43ef-a5ed-d73273ab0064}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BlinxWrap">
+      <UniqueIdentifier>{34be18f6-2dd0-4ea8-8aa2-6b46db000b42}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -48,6 +54,9 @@
     <ClInclude Include="av_utils.h">
       <Filter>Header Files\avcodec</Filter>
     </ClInclude>
+    <ClInclude Include="blinxwrap_ctx.h">
+      <Filter>Header Files\BlinxWrap</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.c">
@@ -67,6 +76,9 @@
     </ClCompile>
     <ClCompile Include="av_utils.c">
       <Filter>Source Files\avcodec</Filter>
+    </ClCompile>
+    <ClCompile Include="blinxwrap_ctx.c">
+      <Filter>Source Files\BlinxWrap</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -157,6 +157,7 @@
     <ClInclude Include="binary_patching.h" />
     <ClInclude Include="BinkFnc.h" />
     <ClInclude Include="BinkHandle.h" />
+    <ClInclude Include="blinxwrap_ctx.h" />
     <ClInclude Include="debug.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="pch.h" />
@@ -165,6 +166,7 @@
     <ClCompile Include="av_utils.c" />
     <ClCompile Include="binary_patching.c" />
     <ClCompile Include="bink.c" />
+    <ClCompile Include="blinxwrap_ctx.c" />
     <ClCompile Include="debug.c" />
     <ClCompile Include="dllmain.c" />
     <ClCompile Include="pch.c">

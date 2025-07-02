@@ -4,22 +4,27 @@
 #include <malloc.h>
 
 #include "pch.h"
+#include "blinxwrap_ctx.h"
 #include "BinkHandle.h"
+#include "debug.h"
 
 #define BINKDLL
 #include "BinkFnc.h"
 
 BinkHandle* __stdcall BinkOpen(const char* name, unsigned int flags) {
+	BlinxWrapCtx* bctx = NULL;
+	BinkHandle* hdl = NULL;
 
 	DebugPrintfA("BLINXWRAP(BinkOpen): Asked to load \"%s\"!", name);
 
-	BinkHandle* hdl = malloc(sizeof(BinkHandle));
-
-	if (hdl == NULL)
+	bctx = malloc(sizeof(BlinxWrapCtx));
+	if (bctx == NULL)
 		return NULL;
 
-	hdl->frames = 25 * 3;
+	hdl = binkhandle_from_blinxwrap(bctx);
+
 	// Zanzarah hardcoded defaults
+	hdl->frames = 25 * 3;
 	hdl->width = 640;
 	hdl->height = 480;
 
@@ -27,8 +32,14 @@ BinkHandle* __stdcall BinkOpen(const char* name, unsigned int flags) {
 }
 
 void __stdcall BinkClose(BinkHandle* handle) {
+	BlinxWrapCtx* bctx = NULL;
 	if (handle != NULL)
-		free(handle);
+		return;
+
+	bctx = blinxwrap_from_binkhandle(handle);
+
+	if (bctx != NULL)
+		free(bctx);
 }
 
 int __stdcall BinkWait(BinkHandle* handle) {
