@@ -6,8 +6,9 @@
 #include <corecrt_wstdio.h>
 #include <psapi.h>
 
-#include "debug.h"
+#include "av_utils.h"
 #include "binary_patching.h"
+#include "debug.h"
 
 BOOL APIENTRY DllMain( HMODULE hModule,
                        DWORD  ul_reason_for_call,
@@ -17,7 +18,8 @@ BOOL APIENTRY DllMain( HMODULE hModule,
     switch (ul_reason_for_call)
     {
     case DLL_PROCESS_ATTACH:
-        DebugPrintf(L"BLINXWRAP: Loaded !");
+        DebugPrintfW(L"BLINXWRAP: Loaded !");
+        bav_utils_printall_codec();
         break;
     case DLL_THREAD_ATTACH:
     case DLL_THREAD_DETACH:

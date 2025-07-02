@@ -7,6 +7,8 @@
 
 #define BLINX_AGGRESSIVE_DEBUGGING 1
 
-void DebugPrintf(const WCHAR* format, ...);
+void DebugPrintfW(const WCHAR* format, ...);
+void DebugPrintfA(const CHAR* format, ...);
+void charToWChar(const char* char_str, wchar_t* wchar_buf, size_t buf_size);
 
 #endif

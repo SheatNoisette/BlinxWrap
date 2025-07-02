@@ -24,7 +24,7 @@ BinkSetVolume()
 - [X] Be ABI compatible to be loaded by the game without any issue
 - [X] Be able to write to the DirectDraw7 surface provided by the game
 - [ ] Display a frame from a new video format (Such as h264/mp4)
-    - [ ] Integrate FFMPEG
+    - [X] Integrate FFMPEG
     - [ ] Load a file and detect the codec used
     - [ ] Update the Bink Structure
     - [ ] Copy the first frame to the Direct Draw buffer

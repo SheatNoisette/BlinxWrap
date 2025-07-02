@@ -10,6 +10,9 @@
 #include "BinkFnc.h"
 
 BinkHandle* __stdcall BinkOpen(const char* name, unsigned int flags) {
+
+	DebugPrintfA("BLINXWRAP(BinkOpen): Asked to load \"%s\"!", name);
+
 	BinkHandle* hdl = malloc(sizeof(BinkHandle));
 
 	if (hdl == NULL)

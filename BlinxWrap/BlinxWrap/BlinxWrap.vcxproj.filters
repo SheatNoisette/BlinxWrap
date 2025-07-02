@@ -19,6 +19,12 @@
     <Filter Include="Header Files\Patching">
       <UniqueIdentifier>{a57012f7-f78b-4fcf-9294-4e17373ebf1d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\avcodec">
+      <UniqueIdentifier>{5acd1b8f-22de-4c2c-9dc0-623582d5779e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\avcodec">
+      <UniqueIdentifier>{f138c56d-adc0-4bdc-91c3-22e45ffb9545}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -39,6 +45,9 @@
     <ClInclude Include="binary_patching.h">
       <Filter>Header Files\Patching</Filter>
     </ClInclude>
+    <ClInclude Include="av_utils.h">
+      <Filter>Header Files\avcodec</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.c">
@@ -55,6 +64,9 @@
     </ClCompile>
     <ClCompile Include="binary_patching.c">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="av_utils.c">
+      <Filter>Source Files\avcodec</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
