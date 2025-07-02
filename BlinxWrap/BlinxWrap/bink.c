@@ -15,7 +15,7 @@ BinkHandle* __stdcall BinkOpen(const char* name, unsigned int flags) {
 	if (hdl == NULL)
 		return NULL;
 
-	hdl->frames = 1;
+	hdl->frames = 25 * 3;
 	// Zanzarah hardcoded defaults
 	hdl->width = 640;
 	hdl->height = 480;
@@ -29,6 +29,7 @@ void __stdcall BinkClose(BinkHandle* handle) {
 }
 
 int __stdcall BinkWait(BinkHandle* handle) {
+	Sleep((1/25) * 1000);
 	return 0;
 }
 
@@ -43,7 +44,19 @@ void __stdcall BinkSetFrameRate(int fps, int flags) {
 }
 
 int __stdcall BinkCopyToBuffer(BinkHandle* handle, void* dst, int pitch, unsigned int dheight, unsigned int dx, unsigned int dy, unsigned int flags) {
-	return 0;
+    char* currentScanline = (char*)dst + (dy * pitch) + (dx * sizeof(DWORD));
+
+    for (unsigned int y = 0; y < dheight; y++) {
+        DWORD* rowPixels = (DWORD*)currentScanline;
+		// Iterate across the width of the pitch
+        for (unsigned int x = 0; x < (pitch / sizeof(DWORD)); x++) { 
+            rowPixels[x] = (0xff << 32) | ((x % 255) << 16) | ((x % 255) << 8) | (x % 255);
+        }
+        // Move to the next scanline
+        currentScanline += pitch;
+    }
+
+    return 0;
 }
 
 int __stdcall BinkDDSurfaceType(void* dd_surface) {

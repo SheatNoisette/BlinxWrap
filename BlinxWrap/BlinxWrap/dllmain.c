@@ -1,5 +1,13 @@
-// dllmain.cpp : Defines the entry point for the DLL application.
+#define WIN32_LEAN_AND_MEAN
+
 #include "pch.h"
+#include <windows.h>
+#include <stdio.h>
+#include <corecrt_wstdio.h>
+#include <psapi.h>
+
+#include "debug.h"
+#include "binary_patching.h"
 
 BOOL APIENTRY DllMain( HMODULE hModule,
                        DWORD  ul_reason_for_call,
@@ -9,6 +17,8 @@ BOOL APIENTRY DllMain( HMODULE hModule,
     switch (ul_reason_for_call)
     {
     case DLL_PROCESS_ATTACH:
+        DebugPrintf(L"BLINXWRAP: Loaded !");
+        break;
     case DLL_THREAD_ATTACH:
     case DLL_THREAD_DETACH:
     case DLL_PROCESS_DETACH:

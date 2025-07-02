@@ -13,6 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\Bink">
+      <UniqueIdentifier>{20ddfc87-d889-415a-94e0-803b893236ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Patching">
+      <UniqueIdentifier>{a57012f7-f78b-4fcf-9294-4e17373ebf1d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -22,10 +28,16 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="BinkFnc.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Bink</Filter>
     </ClInclude>
     <ClInclude Include="BinkHandle.h">
+      <Filter>Header Files\Bink</Filter>
+    </ClInclude>
+    <ClInclude Include="debug.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="binary_patching.h">
+      <Filter>Header Files\Patching</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -36,6 +48,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="bink.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="debug.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="binary_patching.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

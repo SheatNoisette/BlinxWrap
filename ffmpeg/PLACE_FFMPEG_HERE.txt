@@ -1,0 +1,11 @@
+Please put the FFMPEG prebuilt libraries here.
+
+https://github.com/System233/ffmpeg-msvc-prebuilt/releases/download/n7.1-241205/
+
+Your tree will look like this:
+bin/
+cmake/
+include/
+lib/
+licenses/
+share/
