@@ -12,8 +12,8 @@
 // Extract BlinxWrap context from a Binkhandle
 BlinxWrapCtx *blinxwrap_from_binkhandle(BinkHandle *bh)
 {
-    return (struct BlinxWrapCtx *)(
-        (LPVOID *)bh - offsetof(BlinxWrapCtx, bhandle)
+    return (BlinxWrapCtx *)(
+        (uint8_t *)bh - offsetof(BlinxWrapCtx, bhandle)
     );
 }
 

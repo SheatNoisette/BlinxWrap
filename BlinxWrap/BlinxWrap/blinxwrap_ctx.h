@@ -12,9 +12,19 @@
 // BlixWrapContext: Hold the current context and data of the wrapper, hidden
 // from the target application
 typedef struct BlinxWrapCtx {
-    AVFormatContext *fmt_ctx;
+    /* FFmpeg handles */
+    AVFormatContext *fmt;
+    AVCodecContext  *dec;
+    AVStream        *vst;
+    struct SwsContext *sws;      // YUV -> BGRA converter
+    AVFrame  *raw;               // decoded frame (codec native fmt)
+    AVFrame  *rgb;               // converted BGRA frame
+    int64_t   next_pts;          // PTS of frame that BinkDoFrame will output next
+    int       eof;               // set when av_read_frame() reaches EOF
+    int       frame_time_ms;     // 1000 / fps ; used by BinkWait()
 
-    struct BinkHandle bhandle;
+    // Public Bink facade
+    BinkHandle bhandle;
 } BlinxWrapCtx;
 
 BlinxWrapCtx *blinxwrap_from_binkhandle(BinkHandle *bh);

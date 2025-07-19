@@ -21,15 +21,17 @@ BinkSetVolume()
 
 ## Milestones
 
+> STATUS: Can play Bink Videos / other containers without sound !
+
 - [X] Be ABI compatible to be loaded by the game without any issue
 - [X] Be able to write to the DirectDraw7 surface provided by the game
-- [ ] Display a frame from a new video format (Such as h264/mp4)
+- [X] Display a frame from a new video format (Such as h264/mp4)
     - [X] Integrate FFMPEG
-    - [ ] Load a file and detect the codec used
-    - [ ] Update the Bink Structure
-    - [ ] Copy the first frame to the Direct Draw buffer
-- [ ] Play an unsynced video from a new container
-- [ ] Play a proprely sync video from a new container
+    - [X] Load a file and detect the codec used
+    - [X] Update the Bink Structure
+    - [X] Copy the first frame to the Direct Draw buffer
+- [X] Play an unsynced video from a new container
+- [X] Play a proprely sync video from a new container
 - [ ] Load options from a config file
 - [ ] Hook into Miles Sound System 6.1c to play audio
     - [ ] Reverse and Document MSS Sample format

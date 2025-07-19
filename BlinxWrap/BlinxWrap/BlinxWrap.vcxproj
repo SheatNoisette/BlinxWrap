@@ -90,7 +90,7 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
-      <AdditionalDependencies>Kernel32.lib;bcrypt.lib;strmiids.lib;mfuuid.lib;mfplat.lib;zlib.lib;avcodec.lib;avdevice.lib;avfilter.lib;avutil.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>Kernel32.lib;bcrypt.lib;strmiids.lib;mfuuid.lib;mfplat.lib;zlib.lib;avcodec.lib;avdevice.lib;avfilter.lib;avutil.lib;swresample.lib;swscale.lib;avformat.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(ProjectDir)..\..\ffmpeg\lib;%(ProjectDir)..\..\ffmpeg\bin;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ModuleDefinitionFile>
       </ModuleDefinitionFile>
@@ -112,7 +112,7 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
-      <AdditionalDependencies>Kernel32.lib;bcrypt.lib;strmiids.lib;mfuuid.lib;mfplat.lib;zlib.lib;avcodec.lib;avdevice.lib;avfilter.lib;avutil.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>Kernel32.lib;bcrypt.lib;strmiids.lib;mfuuid.lib;mfplat.lib;zlib.lib;avcodec.lib;avdevice.lib;avfilter.lib;avutil.lib;swresample.lib;swscale.lib;avformat.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(ProjectDir)..\..\ffmpeg\lib;%(ProjectDir)..\..\ffmpeg\bin;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ModuleDefinitionFile>
       </ModuleDefinitionFile>
