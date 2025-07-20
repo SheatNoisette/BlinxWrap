@@ -76,24 +76,86 @@ struct BinkHandle __packed
 
 ```
 
-### Open a Video (0x00564bbe)
+## Miles Sound System 6.1c
 
-There's a reconstructed pseudocode of how the game loads a video:
-```c++
+No public documentation available.
 
-Binkhandle *BinkVideoPlayback::open_video(char *video_name) {
-  if (this->bink_handle == nullptr)
-    return nullptr;
 
-  this->
+Imported Miles Sound System functions from Bink, resolved with GetProcAddress.
 
-}
+French Version 1.0.1:
+- _AIL_minimum_sample_buffer_size@12
+- _AIL_allocate_sample_handle@4
+- _AIL_init_sample@4
+- _AIL_stop_sample@4
+- _AIL_resume_sample@4
+- _AIL_set_sample_type@12
+- _AIL_set_sample_playback_rate@8
+- _AIL_set_sample_user_data@12
+- _AIL_set_sample_volume@8
+- _AIL_set_sample_pan@8
+- _AIL_serve@0
+- _AIL_sample_buffer_ready@4
+- _AIL_load_sample_buffer@16
+- _AIL_end_sample@4
+- _AIL_release_sample_handle@4
+- _AIL_sample_status@4
+- _AIL_sample_buffer_info@20
+- _AIL_mem_alloc_lock@4
+- _AIL_mem_free_lock@4
+- _AIL_get_preference@4
+- _AIL_set_sample_user_data@12
+- _AIL_sample_user_data@8
+- _AIL_register_EOB_callback@8
+- _AIL_sample_buffer_info@20
+- _AIL_digital_latency@4
 
-```
+Random Found Online Bink (Require MSS 7):
+- _AIL_sample_buffer_info@24
+- _AIL_allocate_sample_handle@4
+- _AIL_digital_latency@4
+- _AIL_init_sample@8
+- _AIL_load_sample_buffer@16
+- _AIL_mem_alloc_lock_info@12
+- _AIL_mem_free_lock@4
+- _AIL_minimum_sample_buffer_size@12
+- _AIL_register_EOB_callback@8
+- _AIL_release_sample_handle@4
+- _AIL_resume_sample@4
+- _AIL_sample_buffer_available@4
+- _AIL_sample_user_data@8
+- _AIL_set_sample_buffer_count@8
+- _AIL_set_sample_channel_levels@20
+- _AIL_set_sample_playback_rate@8
+- _AIL_set_sample_user_data@12
+- _AIL_set_sample_volume_pan@12
+- _AIL_stop_sample@4
 
-### Play Video (0x00564d35)
+### Approximate functions calls used in Bink 
 
-There's a reconstructed pseudocode of how the game plays a video:
-```c+++
-
+```c
+int AIL_minimum_sample_buffer_size(Sample *s, int unknown_1, int unknown_2); 
+Sample *__stdcall AIL_allocate_sample_handle(void *unknown_1);
+void __stdcall AIL_init_sample(Sample *s);
+void __stdcall AIL_stop_sample(Sample *s);
+void __stdcall AIL_resume_sample(Sample *s);
+void __stdcall AIL_set_sample_type(Sample *s, int unknown_1, int unknown_2);
+void __stdcall AIL_set_sample_playback_rate(Sample *s, int rate);
+void __stdcall AIL_set_sample_user_data(Sample *s, unsigned int index, int value);
+void __stdcall AIL_set_sample_volume(Sample *s, int volume); // May be between 0 and 2^16-1
+void __stdcall AIL_set_sample_pan(Sample *s, int pan); // May be between 0 and 2^16-1
+void __stdcall AIL_serve();
+int __stdcall AIL_sample_buffer_ready(Sample *s);
+void __stdcall AIL_load_sample_buffer(Sample *s, int unknown_1, void* buffer, unsigned int length);
+void __stdcall AIL_end_sample(Sample *s);
+void __stdcall AIL_release_sample_handle(Sample *s);
+int __stdcall AIL_sample_status(Sample *s);
+int __stdcall AIL_sample_buffer_info(Sample *s, int unknown_1, int unknown_2, int unknown_3, int unknown_4);
+void __stdcall *AIL_mem_alloc_lock(unsigned int size);
+void __stdcall AIL_mem_free_lock(void *ptr);
+int __stdcall AIL_get_preference(int data); // Data ?
+void __stdcall AIL_set_sample_user_data(Sample *s, int index, int value);
+int __stdcall AIL_sample_user_data(Sample *s, int index);
+void *__stdcall AIL_register_EOB_callback(Sample *s, void *callback);
+int __stdcall AIL_digital_latency(void *driver); // May be some sort of driver
 ```
